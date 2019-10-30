@@ -16,25 +16,31 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    string input;
-    ifstream fin;
+    	string input;
+    	ifstream fin;
 
-    fin.open(argv[1]);
+    	fin.open(argv[1]);
 
-    //Reads in entire file to string
-    while (getline(fin, input, '\0')) {}
+    	//Reads in entire file to string
+    	while (getline(fin, input, '\0')) {}
 
-    //Passes the entire file to the scanner
-    scanner lexer(input);
-    lexer.executeLexer();
+    	//Passes the entire file to the scanner
+    	scanner lexer(input);
+    	lexer.executeLexer();
 
-    dataLog parser;
-    parser.setVect(lexer.getVect());
-    parser.executeDataLog();
+   	 dataLog parser;
+   	 parser.setVect(lexer.getVect());
+   	 parser.executeDataLog();
 
-    //lexer.toString();
+	interpreter interpreterr;
+	interpreterr.setSchemeVect(parser.getSchemeVect());
+	interpreterr.setFactVect(parser.getFactVect());
+	interpreterr.setQuerieVect(parser.getQuerieVect());
+	interpreterr.executeInterpreter();
 
-    lexer.deleteVector();
+   	 //lexer.toString();
 
-    return 0;
+    	lexer.deleteVector();
+
+   	 return 0;
 }
