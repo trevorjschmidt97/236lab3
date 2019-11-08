@@ -16,30 +16,25 @@
 class rule
 {
 public:
-    rule () {}
-    
-    string toString()
-    {
-        string os;
-        
-        os+= ruleVector.at(0)->getPredicate() + " :- " + ruleVector.at(1)->getPredicate();
-        
-        for (unsigned int i = 2; i < ruleVector.size(); ++i)
-        {
-            os += "," + ruleVector.at(i)->getPredicate();
-        }
-        
-        return os;
-    }
-    
-    void setPredicates (vector <predicate*> input)
-    {
-        ruleVector = input;
-    }
-    
+    	rule () {}
+
+    	string toString() {
+        	string os;
+        	os+= ruleVector.at(0)->getPredicate() + " :- " + ruleVector.at(1)->getPredicate();
+
+        	for (unsigned int i = 2; i < ruleVector.size(); ++i) {
+            		os += "," + ruleVector.at(i)->getPredicate();
+        	}
+        	return os;
+    	}
+
+    	void setPredicates (vector <predicate*> input) {
+        	ruleVector = input;
+    	}
+
 private:
-    vector <predicate*> ruleVector;
-    
+    	vector <predicate*> ruleVector;
+
 };
 
 #endif /* rule_h */

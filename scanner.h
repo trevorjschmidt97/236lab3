@@ -17,52 +17,42 @@
 
 using namespace std;
 
-class scanner
-{
+class scanner {
 public:
-    scanner(string input)
-    {
-        file = input;
-    }
-    
-    void executeLexer();
-    
-    
-    void toString()
-    {
-        unsigned int tokenCount = 0;
-        for (unsigned int i = 0; i < tokenVect.size(); ++i)
-        {
-            cout << "(" << tokenVect.at(i)->getName() << ",\"" << tokenVect.at(i)->getValue()
-                 << "\"," << tokenVect.at(i)->getLine() << ")" << endl;
-            ++tokenCount;
-        }
-        cout << "Total Tokens = " << tokenCount << endl;
-    }
-    
-    vector<token*> getVect()
-    {
-        return tokenVect;
-    }
-    
-    void deleteVector()
-    {
-        for (unsigned int i = 0; i < tokenVect.size(); ++i)
-        {
-            delete tokenVect.at(i);
-        }
-    }
-    
+	scanner(string input) {
+        	file = input;
+    	}
+
+    	void executeLexer();
+
+
+    	void toString() {
+        	unsigned int tokenCount = 0;
+        	for (unsigned int i = 0; i < tokenVect.size(); ++i) {
+            		cout << "(" << tokenVect.at(i)->getName() << ",\"" << tokenVect.at(i)->getValue()
+                 	     << "\"," << tokenVect.at(i)->getLine() << ")" << endl;
+            		++tokenCount;
+        	}
+        	cout << "Total Tokens = " << tokenCount << endl;
+    	}
+
+    	vector<token*> getVect() {
+        	return tokenVect;
+    	}
+
+    	void deleteVector() {
+        	for (unsigned int i = 0; i < tokenVect.size(); ++i) {
+            		delete tokenVect.at(i);
+        	}
+    	}
 private:
-    string file;
-    vector<token*> tokenVect;
-    
-    void createToken(string a, string b, int c)
-    {
-        token* newToken = new token(a, b, c);
-        tokenVect.push_back(newToken);
-    }
-    
+    	string file;
+    	vector<token*> tokenVect;
+
+    	void createToken(string a, string b, int c) {
+        	token* newToken = new token(a, b, c);
+        	tokenVect.push_back(newToken);
+    	}
 };
 
 #endif /* scanner_h */

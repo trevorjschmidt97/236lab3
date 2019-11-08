@@ -9,12 +9,12 @@
 
 using namespace std;
 
-class database
+class database : public map<string, relation>
 {
 public:
 
 private:
-	map <string,relation> relationVect;
+
 };
 
 #endif //database.h

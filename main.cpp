@@ -16,9 +16,11 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
+	//Create string in which to read the file
     	string input;
-    	ifstream fin;
 
+	//Create and open the file
+    	ifstream fin;
     	fin.open(argv[1]);
 
     	//Reads in entire file to string
@@ -28,9 +30,9 @@ int main(int argc, const char * argv[]) {
     	scanner lexer(input);
     	lexer.executeLexer();
 
-   	 dataLog parser;
-   	 parser.setVect(lexer.getVect());
-   	 parser.executeDataLog();
+	dataLog parser;
+	parser.setVect(lexer.getVect());
+	parser.executeDataLog();
 
 	interpreter interpreterr;
 	interpreterr.setSchemeVect(parser.getSchemeVect());
@@ -38,9 +40,9 @@ int main(int argc, const char * argv[]) {
 	interpreterr.setQuerieVect(parser.getQuerieVect());
 	interpreterr.executeInterpreter();
 
-   	 //lexer.toString();
+	//lexer.toString();
 
     	lexer.deleteVector();
 
-   	 return 0;
+	return 0;
 }

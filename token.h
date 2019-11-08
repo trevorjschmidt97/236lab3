@@ -16,37 +16,31 @@ using namespace std;
 class token
 {
 public:
-    token(string inName, string inValue, int inLine)
-    {
-        name = inName;
-        value = inValue;
-        line = inLine;
-    }
-    
-    string print()
-    {
-        return "(" + name + ",\"" + value + "\"," + to_string(line) + ")";
-    }
-    
-    string getName()
-    {
-        return name;
-    }
-    
-    string getValue()
-    {
-        return value;
-    }
-    
-    int getLine()
-    {
-        return line;
-    }
-    
+    	token(string inName, string inValue, int inLine) {
+        	name = inName;
+        	value = inValue;
+        	line = inLine;
+    	}
+
+    	string print() {
+        	return "(" + name + ",\"" + value + "\"," + to_string(line) + ")";
+    	}
+
+    	string getName() {
+        	return name;
+    	}
+
+    	string getValue() {
+        	return value;
+    	}
+
+    	int getLine() {
+        	return line;
+    	}
 private:
-    string name;
-    string value;
-    int line;
+    	string name;
+    	string value;
+    	int line;
 };
 
 #endif /* token_h */
